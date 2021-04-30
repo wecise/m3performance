@@ -5,7 +5,7 @@
 
 ## Feature
 
-<img src="http://wecise.com/assets/image/m3performance/01.png" style="width:60%;" />
+<img src="http://wecise.com/assets/image/m3performance/m3performance.png" style="width:60%;" />
 
 ## Project setup
 ```
