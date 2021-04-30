@@ -1,5 +1,5 @@
 {
-  "name": "mxperformance",
+  "name": "m3performance",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,19 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@wecise/m3js": "^1.0.28",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "echarts": "^4.9.0",
+    "element-ui": "^2.15.1",
+    "jquery": "^3.6.0",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "svg-icon": "^0.8.2",
+    "vue": "^2.6.11",
+    "vue-grid-layout": "^2.3.12",
+    "vue-i18n": "^8.24.3",
+    "vue-split-panel": "^1.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,7 +29,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-zip-plugin": "^0.1.6"
   },
   "eslintConfig": {
     "root": true,
