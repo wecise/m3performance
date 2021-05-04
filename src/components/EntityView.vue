@@ -51,7 +51,8 @@
                     border>
                     <el-table-column
                         type="selection"
-                        width="55">
+                        width="55"
+                        fixed="left">
                     </el-table-column>
                     <el-table-column :key="index" v-for="(item,index) in entity.dt.columns"
                         :prop="item.field"

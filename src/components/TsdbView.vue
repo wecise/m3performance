@@ -51,7 +51,9 @@
                         @move="onGridItemMoveEvent"
                         @resized="onGridItemResizedEvent"
                         @container-resized="onGridItemContainerResizedEvent"
-                        @moved="onGridItemMovedEvent">
+                        @moved="onGridItemMovedEvent"
+                        drag-ignore-from=".no-drag"
+                        :ref="'item'+item.i">
                     <el-card style="height:100%;">
                         <div slot="header" class="clearfix" style="padding:5px;">
                             <span v-if="item.subKeys != null">
@@ -67,9 +69,10 @@
                             </span>
                             <span v-else>{{item.id}} / {{item.bucket}} / <small>{{item.key}}</small></span>
                         </div>
-                        <ChartView  :model="item"></ChartView>
+                        <ChartView  :model="item" class="no-drag"></ChartView>
                     </el-card>
-                    <span class="remove" @click="removeItem(item.i)">x</span>
+                    <el-button type="text" icon="el-icon-full-screen" @click="onFullScreen(item.i)" style="position: absolute;top: 10px;right: 30px;font-weight: 900;color: #b2b2b2;"></el-button>
+                <el-button type="text" icon="el-icon-close" @click="onRemoveItem(item.i)" style="position: absolute;top: 10px;right: 10px;font-weight: 900;color: #b2b2b2;"></el-button>
                 </grid-item>
 
             </grid-layout>
@@ -273,7 +276,10 @@ export default{
                 })
             })
         },
-        removeItem(val) {
+        onFullScreen(val){
+            this.m3.fullScreenByEl(this.$refs['item'+val][0].$el);
+        },
+        onRemoveItem(val) {
             const index = this.kpi.list.map(item => item.i).indexOf(val);
             this.kpi.list.splice(index, 1);
         },
