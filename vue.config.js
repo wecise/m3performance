@@ -9,7 +9,7 @@ module.exports = {
         https: false,
         hotOnly: false,
     },
-
+    
     publicPath: process.env.NODE_ENV === 'production' 
         ? '/static/app/matrix/m3performance' 
         : '/',

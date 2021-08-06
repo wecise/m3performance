@@ -59,7 +59,7 @@ let init = async function(){
   })
 };
 
-
+console.log(process.env)
 if(process.env.NODE_ENV === "development"){
 
   /* env1 */
