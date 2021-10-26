@@ -126,9 +126,14 @@ export default {
                   this.entity.dt.show = false;
               }
               this.entity.dt.rows = val;
-              this.entity.dt.columns = _.map(val[0],(v,k)=>{
-                  return {field:k,title:k,width:180};
-              })
+              this.entity.dt.columns = _.compact(_.map(val[0],(v,k)=>{
+                    if(!_.includes(['id','name','biz','host','vtime'],k)) return;
+                    if(k === 'vtime'){
+                        return {field:k,title:k};
+                    }else{
+                        return {field:k,title:k,width:200};
+                    }
+                }))
           }
       }
   },
